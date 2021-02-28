@@ -41,6 +41,26 @@ contract DappToken {
         totalSupply = _initialSupply;
     }
 
+    // Returns the token name
+    function getTokenName() public view returns (string memory) {
+        return name;
+    }
+
+    // Returns the token symbol
+    function getTokenSymbol() public view returns (string memory) {
+        return symbol;
+    }
+
+    // Returns the token standard
+    function getTokenStandard() public view returns (string memory) {
+        return standard;
+    }
+
+    // Returns the total supply
+    function getTotalSupply() public view returns (uint) {
+        return totalSupply;
+    }
+
     // Transfering funds.
     function transferFunds(address _to, uint256 _value) public returns (bool success) {
         require(balanceOf[msg.sender] >= _value);
