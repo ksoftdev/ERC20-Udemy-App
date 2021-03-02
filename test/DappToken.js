@@ -8,15 +8,15 @@ contract('DappToken', function(accounts){
     return DappToken.deployed().then(function(instance)
     {
       tokenInstance = instance;
-      return tokenInstance.name();
+      return tokenInstance.getTokenName();
     }).then(function(name)
     {
       assert.equal(name, 'Dapp Token', 'Has the correct name');
-      return tokenInstance.symbol();
+      return tokenInstance.getTokenSymbol();
     }).then(function(symbol)
     {
       assert.equal(symbol, 'DAPP', 'Has the correct symbol');
-      return tokenInstance.standard();
+      return tokenInstance.getTokenStandard();
     }).then(function(standard)
     {
       assert.equal(standard, 'DApp Token v1.0', 'Has the correct standard');
@@ -28,14 +28,14 @@ contract('DappToken', function(accounts){
     return DappToken.deployed().then(function(instance)
     {
       tokenInstance = instance;
-      return tokenInstance.totalSupply();
+      return tokenInstance.getTotalSupply();
     }).then(function(totalSupply)
     {
-      assert.equal(totalSupply.toNumber(), 1000000, 'sets the total supply to 1,000,000')
+      assert.equal(totalSupply.toNumber(), 1000000, 'Sets the total supply to 1,000,000')
       return tokenInstance.balanceOf(accounts[0]);
     }).then(function(adminBalance)
     {
-      assert.equal(adminBalance.toNumber(), 1000000, 'its allocates the initial balance to the admin account')
+      assert.equal(adminBalance.toNumber(), 1000000, 'Its allocates the initial balance to the admin account')
     });
   });
 

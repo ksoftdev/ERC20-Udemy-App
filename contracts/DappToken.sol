@@ -4,16 +4,16 @@ pragma solidity 0.5.16;
 contract DappToken {
 
     // Token name
-    string public name = "Dapp Token";
+    string private name = "Dapp Token";
 
     // Token symbol
-    string public symbol = "DAPP";
+    string private symbol = "DAPP";
 
     // Token standard
-    string public standard = "DApp Token v1.0";
+    string private standard = "DApp Token v1.0";
 
     // Token total supply
-    uint256 public totalSupply;
+    uint256 private totalSupply;
 
     event Transfer(
         address indexed _from,
